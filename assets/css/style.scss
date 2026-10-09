@@ -1,0 +1,242 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Override the minimal theme to look like GitHub README */
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #24292f;
+  --color-heading: #1f2328;
+  --color-link: #0969da;
+  --color-link-hover: #0550ae;
+  --color-border: #d0d7de;
+  --color-code-bg: #f6f8fa;
+  --color-blockquote: #57606a;
+  --color-blockquote-border: #d0d7de;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0d1117;
+    --color-text: #c9d1d9;
+    --color-heading: #e6edf3;
+    --color-link: #58a6ff;
+    --color-link-hover: #79c0ff;
+    --color-border: #30363d;
+    --color-code-bg: #161b22;
+    --color-blockquote: #8b949e;
+    --color-blockquote-border: #30363d;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 1012px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 16px;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 0 0 8px 0;
+}
+
+header p {
+  font-size: 16px;
+  color: var(--color-blockquote);
+  margin: 0;
+}
+
+section {
+  width: 100% !important;
+  float: none !important;
+}
+
+footer {
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-blockquote);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-heading);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-heading);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 6px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 85%;
+  padding: 2px 5px;
+  background-color: var(--color-code-bg);
+  border-radius: 6px;
+  color: var(--color-text);
+}
+
+pre {
+  background-color: var(--color-code-bg);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+blockquote {
+  margin: 0 0 16px 0;
+  padding: 0 16px;
+  color: var(--color-blockquote);
+  border-left: 4px solid var(--color-blockquote-border);
+}
+
+blockquote p {
+  margin-bottom: 8px;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+ul, ol {
+  padding-left: 28px;
+  margin-bottom: 16px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 24px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  display: block;
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  background-color: var(--color-code-bg);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+}
