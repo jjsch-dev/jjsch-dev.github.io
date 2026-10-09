@@ -1,6 +1,6 @@
 title: "Firmware + AI"
 description: "A case study series on building embedded systems with LLM assistance, validated by oscilloscopes and bench evidence."
-author: "Juan José Schlögel"
+author: "Juan Schiavoni"
 url: "https://jjsch-dev.github.io"
 baseurl: ""
 theme: jekyll-theme-minimal
