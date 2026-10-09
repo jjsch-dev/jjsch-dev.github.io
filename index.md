@@ -21,7 +21,7 @@ Every claim is backed by something reproducible on a bench. There are no "it pro
 
 - **Hardware:** ESP32-S3 retrofit of a Tuya smart lock
 - **Firmware:** 49K+ lines of C, bare-metal with ESP-IDF
-- **Backend:** TypeScript (tRPC / Drizzle / Hono), 293 tests
+- **Backend:** TypeScript (NestJS backend with PostgreSQL), 293 tests
 - **Mobile:** Flutter app for virtual credentials (NFC-HCE + BLE beacon)
 - **Method:** Dual-agent architecture with Phase 0 gates, containment audits, and physical bench validation
 
