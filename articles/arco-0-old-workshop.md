@@ -16,7 +16,7 @@ date: 2026-10-09
 
 This project started with a question I didn't know I was asking: **Can one engineer, with the help of AI, build a system that used to require a team?**
 
-The stack says it all: bare-metal C on an ESP32-S3, a TypeScript backend with tRPC and Drizzle, SQL schema design, MQTT broker configuration, Docker containerization, and a Flutter mobile app for virtual credentials. Just a few years ago, that would have needed a firmware engineer, a backend engineer, a DBA, a DevOps specialist, and a mobile developer. Five contexts. Five standups. Five opportunities for misalignment.
+The stack says it all: bare-metal C on an ESP32-S3, a NestJS backend with PostgreSQL, SQL schema design, MQTT broker configuration, Docker containerization, and a Flutter mobile app for virtual credentials. Just a few years ago, that would have needed a firmware engineer, a backend engineer, a DBA, a DevOps specialist, and a mobile developer. Five contexts. Five standups. Five opportunities for misalignment.
 
 Today, a single LLM has cross-domain knowledge that no individual human possesses. It knows about `volatile` qualifiers and memory barriers in C. It knows about `async/await` and type narrowing in TypeScript. It knows about index optimization in SQL. It knows about multi-stage Docker builds. It can translate between these domains in a single conversation.
 
@@ -122,7 +122,7 @@ This context architecture is what allows the method to scale. Without it, a 50K-
 
 ---
 
-The same method was later applied to the distributed backend (tRPC, Drizzle, Hono), with a different oracle: 293 deterministic tests instead of an oscilloscope. The institutional architecture stayed identical. Only the source of truth changed. But that is a story for a later article.
+The same method was later applied to the distributed backend (NestJS, PostgreSQL), with a different oracle: 293 deterministic tests instead of an oscilloscope. The institutional architecture stayed identical. Only the source of truth changed. But that is a story for a later article.
 
 ---
 
