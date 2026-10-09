@@ -129,6 +129,11 @@ p {
   margin-bottom: 16px;
 }
 
+b, strong {
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
 a {
   color: var(--color-link);
   text-decoration: none;
