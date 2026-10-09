@@ -48,7 +48,7 @@ I used the AI as a research assistant. Not as an oracle. I would describe what I
 
 Every hypothesis required validation. The AI said "SPI"; the logic analyzer said "SPI at 8 MHz, CPOL=0, CPHA=0." The AI didn't lie. But it also didn't know until the sniffer confirmed it. This established a rule that would govern the entire project: **the AI proposes, the bench decides.**
 
-![The Tuya PCB, annotated with identified chips: FR8018H, NZ3801, ZB25VQ64C, and others. Reverse engineering begins with technical empathy — understanding how the original designer thought.](pcba_tuya_annotated.png)
+![The Tuya PCB, annotated with identified chips: FR8018H, NZ3801, ZB25VQ64C, and others. Reverse engineering begins with technical empathy — understanding how the original designer thought.](../assets/pcba_tuya_annotated.png)
 
 Once the PCB was mapped — chips identified, buses traced — the AI generated code faster than I could review it. That is where the trouble started.
 
@@ -79,7 +79,7 @@ This is not an abstract concern. It manifested as five concrete failures, all di
 
 **The moral:** The tests said green; the bench said no. One hundred percent of functional failures were discovered on the hardware bench, not by automated suites. Host tests guard understood logic against regressions, but silicon and electromagnetic phenomena exhibit behaviors that simulators don't model.
 
-![The hardware test bench: Rigol oscilloscope, logic analyzer, and the modified Tuya lock PCB. This is where the AI's claims are validated or refuted.](bench_overview_logic_analyzer.png)
+![The hardware test bench: Rigol oscilloscope, logic analyzer, and the modified Tuya lock PCB. This is where the AI's claims are validated or refuted.](../assets/bench_overview_logic_analyzer.png)
 
 A parallel story illustrates the same problem from software. In September 2026, a senior engineer named Ethan deleted 3,084 lines of AI-generated code that worked, passed tests, and had been approved by review. His reason: *"I understand all of this when I'm looking at it. I don't have the system in my head."* His manager turned off the monitor and asked what would happen if the payment provider failed after processing. Ethan couldn't answer without reading the code. Recognition is not recall.
 
