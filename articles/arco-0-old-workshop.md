@@ -56,7 +56,7 @@ Once the PCB was mapped — chips identified, buses traced — the AI generated 
 
 ### The Velocity Trap
 
-In Stage 7.1 of the project, the AI generated 49,690 lines of C in 9 days. 27,355 lines of production code. 22,335 lines of tests and mocks. Manually, that would have taken months.
+The project was divided into numbered stages — bounded phases with frozen deliverables. In Stage 7.1, the AI generated 49,690 lines of C in 9 days. 27,355 lines of production code. 22,335 lines of tests and mocks. Manually, that would have taken months.
 
 But that velocity created a problem that gets lost in the enthusiasm for productivity metrics: **the loss of functional context.**
 
