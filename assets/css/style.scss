@@ -149,22 +149,32 @@ code {
     "Liberation Mono", monospace;
   font-size: 85%;
   padding: 2px 5px;
-  background-color: var(--color-code-bg);
+  background-color: var(--color-code-bg) !important;
   border-radius: 6px;
-  color: var(--color-text);
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border);
 }
 
 pre {
-  background-color: var(--color-code-bg);
+  background-color: var(--color-code-bg) !important;
   border-radius: 6px;
   padding: 16px;
   overflow-x: auto;
   margin-bottom: 16px;
+  border: 1px solid var(--color-border);
 }
 
 pre code {
   padding: 0;
-  background-color: transparent;
+  background-color: transparent !important;
+  border: none;
+  color: var(--color-text) !important;
+}
+
+pre > code {
+  display: block;
+  line-height: 1.5;
+  font-size: 13px;
 }
 
 blockquote {

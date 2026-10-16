@@ -149,6 +149,8 @@ The `rfid_decoder.py` script translates this stream into human-readable register
 
 ![The Mifare test bench: ESP32-S3 DevKitC-1 with an RC522-clone module, Rigol scope capturing SPI traffic.](../assets/lab_mifare_test.jpg)
 
+![Decoded Mifare polling session: the sniffer translates raw hex into register operations, command sequences, and status checks — the OEM protocol, exposed byte by byte.](../assets/mifare_lib_poll.png)
+
 ---
 
 ### Evidence 2: The Fingerprint Sensor — Custom Firmware and the Offline-First Rule
@@ -156,6 +158,8 @@ The `rfid_decoder.py` script translates this stream into human-readable register
 The fingerprint module was a round capacitive sensor on a 6-pin connector: VCC (switched 3.0 V rail), GND, TX, RX, TOUCH_OUT (wake IRQ), and VIN/EN. The silkscreen and protocol pointed to the **GROW R558-S**, a widely used capacitive module based on the Synochip `0xEF01` packet framing.
 
 The AI suggested UART at 57600 baud, 8N1. The scope confirmed it: TX and RX at 3.3 V logic, idle high, 57600 bps. The first bytes captured matched the standard header: `EF 01 FF FF FF FF`.
+
+![The GROW R558-S capacitive fingerprint sensor module. The IC, connector, and surrounding components are visible — a compact module with a UART interface and custom OEM firmware.](../assets/fingerprint_r558_sensor.png)
 
 Here is a fragment of a valid fingerprint detection session captured by our bidirectional UART sniffer:
 
@@ -169,6 +173,8 @@ Here is a fragment of a valid fingerprint detection session captured by our bidi
 ```
 
 The `[T:...]` lines are commands sent by the MCU; `[R:...]` are responses. The packet structure is: header, length, instruction code, parameters, and checksum. Decoding this by hand is tedious; the AI helped write a Python parser, but the parser only works because the sniffer captured the raw bytes accurately.
+
+![UART sniffer capture on the Rigol scope: RS232-TX (yellow), RS232-RX (blue), and decoded bytes (purple) showing a valid `EF 01 ... 30` command packet in real time.](../assets/uart_sniffer_valid_packet.png)
 
 However, inspecting the module's system parameters revealed a custom OEM firmware string: **FPM.TXRF**. When we probed the template transfer commands (UpChar and DownChar) required to replicate a user's fingerprint across multiple doors, we found that UpChar did not return a standard 256- or 512-byte template — it streamed a proprietary **~23 KB binary blob**.
 
@@ -198,6 +204,8 @@ Here is what a real wake-and-touch event looks like in our I2C sniffer:
 [23:25:54.527] sB2a20a08a08a08a08a08a08a08a08a08a08a08a08ap
 [23:25:54.530] sB2a14a00a01ap
 ```
+
+![I2C sniffer capture on the Rigol scope: SCL (yellow), SDA (cyan), and decoded bus bytes (`W:b2 a:02` then `R:b3 a:60 a:00 a:ff a:3f`) showing the first read after a touch event wakes the keypad.](../assets/i2c_keypad_first_touch.png)
 
 Decoding the wire bytes tells the wake story. The CPU reads register `0x02` (TOUCH_OUT low byte) and finds `0x20` (bit 5 = channel K6, which maps to key *). It then writes active sensitivity `0x08` across all 12 channels and sets the scan rate to fast mode (~11 ms), polling every 20 ms until ~5.8 seconds after the last release, when it restores idle sensitivity and goes back to sleep.
 
@@ -237,12 +245,16 @@ The MX608E is a single-channel H-bridge with integrated N- and P-channel MOSFETs
 | L | H | OUTA=L, OUTB=H | Reverse (Retract / Relock) |
 | H | H | Both=L | Brake (Low-side short) |
 
+![Hand-drawn H-bridge schematic traced from the PCB: SOL1/SOL2 control inputs, VBAT motor rail, and the MX608E pinout mapped by visual inspection — the diagram the AI validated against the datasheet.](../assets/hbridge_schem.jpeg)
+
 Connecting the Rigol scope during a card-open event settled every question:
 - A valid credential triggers a flat DC **235 ms pulse on INA** — the actuator extends, coupling the exterior handle to the latch.
 - After a **4.58 second dwell window**, a **235 ms pulse on INB** retracts the pin.
 - After each pulse, both inputs return LOW (Coast / Hi-Z), with the back-EMF flyback tail visible on the scope before settling.
 - The "solenoid" was not a solenoid at all: it was a **reversible geared DC motor** driving a clutch pin open-loop by time, relying on a mechanical slip clutch at the end-stops.
 - At power-up, the OEM fires a single **240 ms INB (retract) pulse** — a mandatory drive-to-known-home sequence for an open-loop actuator recovering from a battery swap.
+
+![Rigol scope capture of the complete lock cycle: a ~4.8 s interval showing the unlock pulse on INA (yellow), the ~4.58 s dwell window, and the relock pulse on INB (cyan). The back-EMF flyback tail is visible after each pulse edge.](../assets/lockdrv_motor_pulses.png)
 
 The AI was useless for identifying the HSJ08H. It could not cross-reference Chinese e-commerce listings with an SOP-8 pinout trace. That identification was pure human detective work — followed immediately by scope verification.
 
@@ -253,6 +265,8 @@ The AI was useless for identifying the HSJ08H. It could not cross-reference Chin
 The audio subsystem was the most intriguing peripheral to reverse-engineer because the signal path started inside flash memory, passed through the MCU's silicon, and ended at a differential analog amplifier.
 
 The **CS8302M** is a mono class-D audio amplifier driving an 8 Ω mini speaker, with an active-low shutdown pin controlled by the CPU. Scoping its inputs showed a **~3.3 Vpp differential analog waveform** coming directly from the FR8018H, which integrates an internal audio CODEC.
+
+![CS8302M audio amplifier schematic from the datasheet: differential inputs (IN+/IN-), shutdown control, bridge-tied load output, and the RC input network that filters the PWM carrier from the ESP32-S3's MCPWM outputs.](../assets/audio_schem.jpg)
 
 Where did the digital audio live? We clipped an in-circuit programmer onto the **8 MB ZB25VQ64C SPI NOR flash** and dumped its contents three times, verifying identical SHA-256 hashes.
 
