@@ -16,12 +16,13 @@ Every claim is backed by something reproducible on a bench. There are no "it pro
 ## Articles
 
 1. **[Part 0: The Old Workshop and the New Hammer](/articles/arco-0-old-workshop)** — Why one engineer didn't delete 3,000 lines of AI-generated code, and what happened when the AI wrote faster than understanding could follow.
+2. **[Part 1: Technical Empathy](/articles/arco-1-technical-empathy)** — How we studied unknown hardware with no documentation, and why "reverse engineering" is better understood as learning how the original designer thought.
 
 ## The Project
 
 - **Hardware:** ESP32-S3 retrofit of a Tuya smart lock
 - **Firmware:** 49K+ lines of C, bare-metal with ESP-IDF
-- **Backend:** TypeScript (NestJS backend with PostgreSQL), 293 tests
+- **Backend:** NestJS with PostgreSQL, 293 tests
 - **Mobile:** Flutter app for virtual credentials (NFC-HCE + BLE beacon)
 - **Method:** Dual-agent architecture with Phase 0 gates, containment audits, and physical bench validation
 
