@@ -362,7 +362,7 @@ Every peripheral had to pass a strict wire-verified acceptance checklist in its 
 
 The open-source peripheral harnesses and drivers are available on GitHub:
 - [mifare_test](https://github.com/jjsch-dev/mifare_test) — Console-based NZ3801/MFRC522 driver and test harness for ESP32-S3
-- [gtx312l_keypad](https://github.com/jjsch-dev/gtx312l_keypad) — Event-driven GTX312L capacitive keypad library for ESP32-S3
+- [gtx312l_keypad](https://github.com/jjsch-dev/keypad_test) — Event-driven GTX312L capacitive keypad library for ESP32-S3
 - [audio_test](https://github.com/jjsch-dev/audio_test) — IMA-ADPCM decoder and complementary MCPWM differential audio harness for ESP32-S3
 
 ---
