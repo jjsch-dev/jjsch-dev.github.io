@@ -4,8 +4,6 @@ title: "I Built a Smart Lock with AI. Then the Scope Proved the AI Wrong."
 date: 2026-10-09
 ---
 
-# I Built a Smart Lock with AI. Then the Scope Proved the AI Wrong.
-
 ## Part 0 — The Old Workshop and the New Hammer
 
 > This is the first article in a five-part series documenting the ES242F Smart Lock project — a firmware retrofit of an OEM electronic lock using dual LLM agents, oscilloscope validation, and a method that emerged from failure, not theory.
