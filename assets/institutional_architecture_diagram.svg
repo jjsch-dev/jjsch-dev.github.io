@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f17" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+
+    <!-- Dot Grid Pattern -->
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1e293b" />
+    </pattern>
+
+    <!-- Card Body Base Gradient -->
+    <linearGradient id="cardBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161f30" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0f1522" stop-opacity="0.98" />
+    </linearGradient>
+
+    <!-- Header Top Glow Gradients -->
+    <linearGradient id="orangeHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="cyanHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="amberHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="greenHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow for Cards -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+
+    <!-- Arrowhead Markers -->
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f97316" />
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#22d3ee" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4ade80" />
+    </marker>
+    <marker id="arrowGrayEnd" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrowGrayStart" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 1.5 L 2 5 L 10 8.5 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <style>
+    .badge-text {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .card-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+    .card-item {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 14px;
+      fill: #e2e8f0;
+    }
+    .pill-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      fill: #e2e8f0;
+    }
+  </style>
+
+  <!-- ================= BACKGROUND ================= -->
+  <rect width="1400" height="840" fill="url(#bgGrad)" />
+  <rect width="1400" height="840" fill="url(#dotGrid)" />
+
+  <!-- ================= LAYER BADGES (LEFT) ================= -->
+  <!-- HUMAN Badge -->
+  <g transform="translate(60, 56)">
+    <rect width="84" height="28" rx="14" fill="#2a1810" stroke="#f97316" stroke-width="1.2" />
+    <text x="42" y="19" text-anchor="middle" class="badge-text" fill="#fb923c">HUMAN</text>
+  </g>
+
+  <!-- AI ROLES Badge -->
+  <g transform="translate(60, 316)">
+    <rect width="102" height="28" rx="14" fill="#0d252c" stroke="#06b6d4" stroke-width="1.2" />
+    <text x="51" y="19" text-anchor="middle" class="badge-text" fill="#22d3ee">AI ROLES</text>
+  </g>
+
+  <!-- INFRASTRUCTURE Badge -->
+  <g transform="translate(60, 586)">
+    <rect width="152" height="28" rx="14" fill="#0d2818" stroke="#22c55e" stroke-width="1.2" />
+    <text x="76" y="19" text-anchor="middle" class="badge-text" fill="#4ade80">INFRASTRUCTURE</text>
+  </g>
+
+  <!-- ================= ORTHOGONAL CONNECTORS ================= -->
+  <!-- 1. Maintainer -> Design Authority (Assigns task) -->
+  <path d="M 480 150 L 350 150 Q 340 150 340 160 L 340 318" fill="none" stroke="#f97316" stroke-width="2.5" marker-end="url(#arrowOrange)" />
+  <g transform="translate(275, 224)">
+    <rect width="130" height="28" rx="14" fill="#1c1917" stroke="#f97316" stroke-width="1.2" />
+    <text x="65" y="19" text-anchor="middle" class="pill-text" fill="#fdba74">Assigns task</text>
+  </g>
+
+  <!-- 2. Design Authority <-> KC (Adversarial check) -->
+  <path d="M 552 395 L 778 395" fill="none" stroke="#94a3b8" stroke-width="2.2" marker-start="url(#arrowGrayStart)" marker-end="url(#arrowGrayEnd)" />
+  <g transform="translate(550, 355)">
+    <rect width="132" height="28" rx="14" fill="#1e293b" stroke="#64748b" stroke-width="1.2" />
+    <text x="66" y="19" text-anchor="middle" class="pill-text">Adversarial check</text>
+  </g>
+
+  <!-- 3. Design Authority -> KC (Design brief) -->
+  <path d="M 540 460 L 778 460" fill="none" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)" />
+  <g transform="translate(562, 420)">
+    <rect width="114" height="28" rx="14" fill="#0f2933" stroke="#06b6d4" stroke-width="1.2" />
+    <text x="57" y="19" text-anchor="middle" class="pill-text" fill="#67e8f9">Design brief</text>
+  </g>
+
+  <!-- 4. KC <-> PROJECT_NOTES (Subtle Contract Reference Link) -->
+  <path d="M 1160 415 L 1190 415" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 4" />
+
+  <!-- 5. KC -> Firmware Repo & Backend Repo (Code bus) -->
+  <!-- Main trunk from KC bottom -->
+  <path d="M 940 500 L 940 550 Q 940 560 930 560 L 320 560 Q 310 560 310 570 L 310 618" fill="none" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)" />
+  <!-- Branch down to Backend Repo -->
+  <path d="M 640 560 Q 630 560 630 570 L 630 618" fill="none" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)" />
+  <!-- Junction node -->
+  <circle cx="635" cy="560" r="4" fill="#22d3ee" />
+
+  <!-- Code Pill 1 (Firmware branch) -->
+  <g transform="translate(455, 520)">
+    <rect width="68" height="28" rx="14" fill="#0f2933" stroke="#06b6d4" stroke-width="1.2" />
+    <text x="34" y="19" text-anchor="middle" class="pill-text" fill="#67e8f9">Code</text>
+  </g>
+  <!-- Code Pill 2 (Backend branch) -->
+  <g transform="translate(775, 520)">
+    <rect width="68" height="28" rx="14" fill="#0f2933" stroke="#06b6d4" stroke-width="1.2" />
+    <text x="34" y="19" text-anchor="middle" class="pill-text" fill="#67e8f9">Code</text>
+  </g>
+
+  <!-- 6. CENTRAL VERTICAL LINE: Backend Repo -> Maintainer (Juan) -->
+  <!-- Sube 100% ortogonal por el centro (x=690) con jump-overs limpios en los cruces -->
+  <path d="M 690 630 L 690 567 A 7 7 0 0 1 690 553 L 690 467 A 7 7 0 0 1 690 453 L 690 402 A 7 7 0 0 1 690 388 L 690 258" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrowGreen)" />
+
+  <!-- 7. Backend Repo -> CI Pipeline -->
+  <path d="M 820 705 L 898 705" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrowGreen)" />
+
+  <!-- 8. CI Pipeline -> KC (Test results) -->
+  <path d="M 1055 630 L 1055 512" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrowGreen)" />
+  <g transform="translate(1070, 556)">
+    <rect width="116" height="28" rx="14" fill="#0d2818" stroke="#22c55e" stroke-width="1.2" />
+    <text x="58" y="19" text-anchor="middle" class="pill-text" fill="#86efac">Test results</text>
+  </g>
+
+  <!-- 9. KC -> Maintainer (Test results) -->
+  <path d="M 1055 330 L 1055 160 Q 1055 150 1045 150 L 912 150" fill="none" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrowGreen)" />
+  <g transform="translate(925, 224)">
+    <rect width="116" height="28" rx="14" fill="#0d2818" stroke="#22c55e" stroke-width="1.2" />
+    <text x="58" y="19" text-anchor="middle" class="pill-text" fill="#86efac">Test results</text>
+  </g>
+
+  <!-- ================= CARDS ================= -->
+
+  <!-- CARD 1: Maintainer (Juan) -->
+  <g transform="translate(480, 56)" filter="url(#cardShadow)">
+    <rect width="420" height="190" rx="12" fill="url(#cardBody)" stroke="#f97316" stroke-width="1.8" />
+    <rect width="420" height="54" rx="12" fill="url(#orangeHeader)" />
+    <text x="210" y="34" text-anchor="middle" class="card-title" fill="#fb923c">Maintainer (Juan)</text>
+    <line x1="24" y1="54" x2="396" y2="54" stroke="#f97316" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="34" cy="82" r="3" fill="#fb923c" />
+    <text x="48" y="87" class="card-item">Owns remotes</text>
+
+    <circle cx="34" cy="110" r="3" fill="#fb923c" />
+    <text x="48" y="115" class="card-item">Runs bench</text>
+
+    <circle cx="34" cy="138" r="3" fill="#fb923c" />
+    <text x="48" y="143" class="card-item">Final decisions</text>
+
+    <circle cx="34" cy="166" r="3" fill="#fb923c" />
+    <text x="48" y="171" class="card-item">Pushes code</text>
+  </g>
+
+  <!-- CARD 2: Design Authority -->
+  <g transform="translate(160, 330)" filter="url(#cardShadow)">
+    <rect width="380" height="170" rx="12" fill="url(#cardBody)" stroke="#06b6d4" stroke-width="1.8" />
+    <rect width="380" height="54" rx="12" fill="url(#cyanHeader)" />
+    <text x="190" y="34" text-anchor="middle" class="card-title" fill="#22d3ee">Design Authority</text>
+    <line x1="24" y1="54" x2="356" y2="54" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="34" cy="86" r="3" fill="#22d3ee" />
+    <text x="48" y="91" class="card-item">Diagnoses failures</text>
+
+    <circle cx="34" cy="116" r="3" fill="#22d3ee" />
+    <text x="48" y="121" class="card-item">Writes task briefs</text>
+
+    <circle cx="34" cy="146" r="3" fill="#22d3ee" />
+    <text x="48" y="151" class="card-item">Validates evidence</text>
+  </g>
+
+  <!-- CARD 3: KC (Coding Agent) -->
+  <g transform="translate(790, 330)" filter="url(#cardShadow)">
+    <rect width="370" height="170" rx="12" fill="url(#cardBody)" stroke="#06b6d4" stroke-width="1.8" />
+    <rect width="370" height="54" rx="12" fill="url(#cyanHeader)" />
+    <text x="185" y="34" text-anchor="middle" class="card-title" fill="#22d3ee">KC (Coding Agent)</text>
+    <line x1="24" y1="54" x2="346" y2="54" stroke="#06b6d4" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="34" cy="86" r="3" fill="#22d3ee" />
+    <text x="48" y="91" class="card-item">Investigates code</text>
+
+    <circle cx="34" cy="116" r="3" fill="#22d3ee" />
+    <text x="48" y="121" class="card-item">Writes implementation</text>
+
+    <circle cx="34" cy="146" r="3" fill="#22d3ee" />
+    <text x="48" y="151" class="card-item">Runs tests</text>
+  </g>
+
+  <!-- CARD 4: PROJECT_NOTES -->
+  <g transform="translate(1190, 330)" filter="url(#cardShadow)">
+    <rect width="170" height="170" rx="12" fill="url(#cardBody)" stroke="#f59e0b" stroke-width="1.8" />
+    <rect width="170" height="54" rx="12" fill="url(#amberHeader)" />
+    <text x="85" y="34" text-anchor="middle" class="card-title" fill="#fbbf24" font-size="16">PROJECT_NOTES</text>
+    <line x1="16" y1="54" x2="154" y2="54" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="24" cy="86" r="3" fill="#fbbf24" />
+    <text x="36" y="91" class="card-item">78 typed</text>
+
+    <circle cx="24" cy="114" r="3" fill="#fbbf24" />
+    <text x="36" y="119" class="card-item">decisions</text>
+
+    <circle cx="24" cy="142" r="3" fill="#fbbf24" />
+    <text x="36" y="147" class="card-item">(D1-D78)</text>
+  </g>
+
+  <!-- CARD 5: Firmware Repo -->
+  <g transform="translate(160, 630)" filter="url(#cardShadow)">
+    <rect width="300" height="150" rx="12" fill="url(#cardBody)" stroke="#22c55e" stroke-width="1.8" />
+    <rect width="300" height="52" rx="12" fill="url(#greenHeader)" />
+    <text x="150" y="33" text-anchor="middle" class="card-title" fill="#4ade80">Firmware Repo</text>
+    <line x1="20" y1="52" x2="280" y2="52" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="30" cy="86" r="3" fill="#4ade80" />
+    <text x="44" y="91" class="card-item">ESP32-S3 / ESP-IDF</text>
+
+    <circle cx="30" cy="118" r="3" fill="#4ade80" />
+    <text x="44" y="123" class="card-item">C + isolated libs</text>
+  </g>
+
+  <!-- CARD 6: Backend Repo -->
+  <g transform="translate(520, 630)" filter="url(#cardShadow)">
+    <rect width="300" height="150" rx="12" fill="url(#cardBody)" stroke="#22c55e" stroke-width="1.8" />
+    <rect width="300" height="52" rx="12" fill="url(#greenHeader)" />
+    <text x="150" y="33" text-anchor="middle" class="card-title" fill="#4ade80">Backend Repo</text>
+    <line x1="20" y1="52" x2="280" y2="52" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="30" cy="86" r="3" fill="#4ade80" />
+    <text x="44" y="91" class="card-item">NestJS / PostgreSQL</text>
+
+    <circle cx="30" cy="118" r="3" fill="#4ade80" />
+    <text x="44" y="123" class="card-item">MQTT + mTLS</text>
+  </g>
+
+  <!-- CARD 7: CI Pipeline -->
+  <g transform="translate(910, 630)" filter="url(#cardShadow)">
+    <rect width="300" height="150" rx="12" fill="url(#cardBody)" stroke="#22c55e" stroke-width="1.8" />
+    <rect width="300" height="52" rx="12" fill="url(#greenHeader)" />
+    <text x="150" y="33" text-anchor="middle" class="card-title" fill="#4ade80">CI Pipeline</text>
+    <line x1="20" y1="52" x2="280" y2="52" stroke="#22c55e" stroke-opacity="0.35" stroke-width="1" />
+
+    <circle cx="30" cy="86" r="3" fill="#4ade80" />
+    <text x="44" y="91" class="card-item">293 e2e tests</text>
+
+    <circle cx="30" cy="118" r="3" fill="#4ade80" />
+    <text x="44" y="123" class="card-item">Docker / GitHub Actions</text>
+  </g>
+</svg>
