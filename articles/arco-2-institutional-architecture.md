@@ -249,7 +249,7 @@ The system could heal the tested failure because the architecture made a mismatc
 
 The institutional architecture was not only for the firmware. When we built the backend, we applied the same rules — with a different oracle.
 
-For the lock, the oracle included the oscilloscope, the sniffer, and the physical runbook. For the backend, an early recorded milestone was **293 end-to-end tests** in CI — subsequently expanded to the **885 tests across 67 suites** reported for the reconcile-budget fix. These are distinct snapshots of the test program, not contradictory totals.
+For the lock, the oracle included the oscilloscope, the sniffer, and the physical runbook. For the backend, an early recorded milestone was **293 end-to-end tests** in CI — subsequently expanded to the **885 tests across 67 suites** reported for the reconcile-budget fix. These are distinct snapshots of the test program at different milestones, not contradictory totals. The 293-suite screenshot shows the pipeline when backend development began; the 885-suite figure reflects the expanded test program after the healer fixes.
 
 ![GitHub Actions CI pipeline: Docker build stage completing successfully, producing a reproducible container image with a pinned SHA-256 digest.](../assets/ci_docker_build.png)
 
